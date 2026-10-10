@@ -1,0 +1,302 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --background: #f7f5f0;
+  --surface: #ffffff;
+  --text: #20221f;
+  --muted: #85867f;
+  --accent: #426b54;
+  --accent-light: #e8efe8;
+  --border: #e8e6df;
+  --danger: #b64040;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.header {
+  height: 76px;
+  padding: 0 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  color: var(--text);
+  font-size: 25px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.header-label, .eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.header-label {
+  color: var(--muted);
+}
+
+.container {
+  max-width: 780px;
+  padding: 64px 24px 32px;
+  margin: auto;
+}
+
+.intro {
+  margin-bottom: 38px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 7vw, 64px);
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+  margin: 0;
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+.subtitle {
+  margin-top: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 450px;
+}
+
+.task-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 12px 36px #25251a08;
+}
+
+.panel-heading, .panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panel-heading h2 {
+  margin: 0 0 5px;
+  font-size: 21px;
+}
+
+.panel-heading p, .date-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.task-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.task-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+}
+
+.task-form input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.task-form button {
+  background: var(--accent);
+  color: white;
+  border: 0;
+  padding: 0 18px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.task-form button span {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin: 26px 0 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.filter {
+  background: transparent;
+  border: 0;
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.filter.active {
+  color: var(--accent);
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent);
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 2px;
+  border-bottom: 1px solid var(--border);
+}
+
+.task-item input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.task-name {
+  flex: 1;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+
+.task-item.completed .task-name {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.delete-button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 8px;
+}
+
+.delete-button:hover {
+  color: var(--danger);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 30px 12px;
+}
+
+.empty-icon {
+  color: var(--accent);
+  font-size: 30px;
+}
+
+.empty-state h3 {
+  margin: 12px 0 6px;
+  font-size: 15px;
+}
+
+.empty-state p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.panel-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.clear-button {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 30px 0 0;
+}
+
+@media (max-width: 520px) {
+  .header {
+    padding: 0 20px;
+  }
+
+  .header-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .container {
+    padding: 42px 16px 24px;
+  }
+
+  .task-panel {
+    padding: 20px 16px;
+  }
+
+  .task-form {
+    flex-wrap: wrap;
+  }
+
+  .task-form input {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .task-form button {
+    padding: 13px 18px;
+  }
+}

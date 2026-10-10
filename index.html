@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple task manager built with JavaScript.">
+  <title>TaskFlow | Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">Task<span>Flow.</span></a>
+    <span class="header-label">PERSONAL PRODUCTIVITY</span>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">YOUR DAY, ORGANIZED</p>
+      <h1>Make time for<br><span>what matters.</span></h1>
+      <p class="subtitle">A simple space to plan your tasks and track your progress.</p>
+    </section>
+
+    <section class="task-panel">
+      <div class="panel-heading">
+        <div>
+          <h2>My tasks</h2>
+          <p id="task-count">0 tasks remaining</p>
+        </div>
+        <span class="date-label" id="today"></span>
+      </div>
+
+      <form id="task-form" class="task-form">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="What needs to get done?"
+          maxlength="120"
+          aria-label="New task"
+          required
+        >
+        <button type="submit">Add task <span>+</span></button>
+      </form>
+
+      <p id="form-error" class="error" role="alert"></p>
+
+      <div class="filters" aria-label="Filter tasks">
+        <button class="filter active" data-filter="all" type="button">All</button>
+        <button class="filter" data-filter="active" type="button">Active</button>
+        <button class="filter" data-filter="completed" type="button">Completed</button>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+
+      <div id="empty-state" class="empty-state">
+        <span class="empty-icon">✳</span>
+        <h3>Nothing on your list yet</h3>
+        <p>Add your first task to get started.</p>
+      </div>
+
+      <div class="panel-footer">
+        <span id="progress-text">Let's get started.</span>
+        <button id="clear-completed" type="button" class="clear-button">
+          Clear completed
+        </button>
+      </div>
+    </section>
+
+    <footer>
+      Built with HTML, CSS & JavaScript.
+    </footer>
+  </main>
+</body>
+</html>
